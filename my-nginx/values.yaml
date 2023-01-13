@@ -1,0 +1,4 @@
+nginx:
+  image: bernardotmota/mynginx:1.0
+name: bernardo
+namesp: bernardo-tavares

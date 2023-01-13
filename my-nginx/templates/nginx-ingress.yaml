@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: teste-v3
+  namespace: {{ .Values.namesp }}
+
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: {{ .Values.name }}.stag.jac.bsb.br
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ .Values.namesp }}
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
